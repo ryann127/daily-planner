@@ -63,9 +63,32 @@ textarea {
   border-bottom-right-radius: 15px;
   background-color: #06aed5;
   color: white;
+  
 }
 
 .saveBtn i:hover {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
+}
+
+.hour p {
+  font-size: 14px;
+  color: #444;
+}
+.hourNotes {
+  box-sizing: border-box;
+  width: calc(100% - 130px);
+  border: none;
+  border-top: 1px solid #bbb;
+  background-color: #e9ecef;
+  padding: 5px;
+}
+.last-hour,
+.last-hourNotes {
+  border-bottom: 1px solid #bbb;
+}
+
+.fa-save {
+  color: white;
+  margin-bottom: 5px;
 }
