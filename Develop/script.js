@@ -1,13 +1,11 @@
 var timeDisplayEl = $("#currentDay");
-var slotDisplayEl = $(".hourNotes");
 var presentTime; 
 var hoursInDay = {
     morning: ["12AM", "01AM", "02AM", "03AM", "04AM", "05AM", "06AM", "07AM", "08AM"],
-    business: ["09AM", "10AM", "11AM", "12PM", "01PM", "02PM", "03PM", "O4PM", "06PM"],
+    business: ["09AM", "10AM", "11AM", "12PM", "01PM", "02PM", "03PM",  "04PM", "05PM"],
     night: [ "06PM", "07PM", "08PM", "09PM", "10PM", "11PM"]
 };
 
-// TODO: function to display the time in the jumbotron and update every second
 function displayTime() {
     var rightNow = moment().format('MMMM Do YYYY, h:mm:ss A');
     timeDisplayEl.text(rightNow);
@@ -21,16 +19,18 @@ function colorChange() {
     console.log(presentTime);
 
     if (hoursInDay.morning.indexOf(presentTime) !== -1 || hoursInDay.night.indexOf(presentTime) !== -1){
-        $(".hourNotes").css("background-color", "#aca1a1");
+        $(".timeSlot").css("background-color", "#aca1a1");
     }
     if (hoursInDay.business.indexOf(presentTime) !== -1){
         $("#"+presentTime).css("background-color", "#ff6961");
        
     }
     for (var i=0; i < hoursInDay.business.indexOf(presentTime); i++){
-       ;
+        $("#" + hoursInDay.business[i]).css("background-color", "#aca1a1");
     }
-    //figure out a way to change color for future hours
+    for (var i=hoursInDay.business.length-1; i > hoursInDay.business.indexOf(presentTime); i--) {
+        $("#" + hoursInDay.business[i]).css("background-color", "#77dd77")
+    }
 }
 
 

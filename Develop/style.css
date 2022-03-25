@@ -64,6 +64,7 @@ textarea {
   border-bottom-right-radius: 15px;
   background-color: #06aed5;
   color: white;
+  height: 83px;
   
 }
 
@@ -76,17 +77,14 @@ textarea {
   font-size: 14px;
   color: #444;
 }
-.hourNotes {
+.timeSlot {
   box-sizing: border-box;
   width: calc(100% - 130px);
   border: none;
   border-top: 1px solid #bbb;
   background-color: #e9ecef;
   padding: 5px;
-}
-.last-hour,
-.last-hourNotes {
-  border-bottom: 1px solid #bbb;
+  border-bottom: 2px, solid, black;
 }
 
 .fa-save {
